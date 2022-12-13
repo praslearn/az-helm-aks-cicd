@@ -15,7 +15,7 @@ steps:
       helmVersionToInstall: $(helmVersion)
   - bash: |
       echo $(registryPassword) | helm registry login $(registryName).azurecr.io --username $(registryLogin) --password-stdin
-      cd ${Build.SourcesDirectory}/deploy/k8s/helm
+      cd $(Build.SourcesDirectory)/deploy/k8s/helm
       helm chart save $(helm package --app-version $(imageTag) --version $(helmChartVersion) ./$(projectName) | grep -o '/.*.tgz') $(registryName).azurecr.io/charts/$(projectName):$(imageTag)
       helm chart push $(registryName).azurecr.io/charts/$(projectName):$(imageTag)
       echo $(jq -n --arg version "$(helmChartVersion)" '{helmChartVersion: $version}') > $(build.artifactStagingDirectory)/variables.json
