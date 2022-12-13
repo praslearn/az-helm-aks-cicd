@@ -3,10 +3,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "project-one.fullname" . }}
+  name: {{ .Values.application.name }}
   labels:
     ufo: {{ $cfgname}}
-    app: {{ template "project-one.name" . }}
+    app: {{ .Values.application.name }}
     chart: {{ template "project-one.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
@@ -16,12 +16,12 @@ spec:
 {{- end }}
   selector:
     matchLabels:
-      app: {{ template "project-one.name" . }}
+      app: {{ .Values.application.name }}
       release: {{ .Release.Name }}
   template:
     metadata:
       labels:
-          app: {{ template "project-one.name" . }}
+          app: {{ .Values.application.name }}
           release: {{ .Release.Name }}
     spec:
       imagePullSecrets:
