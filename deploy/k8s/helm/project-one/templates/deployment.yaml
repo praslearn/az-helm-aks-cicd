@@ -25,7 +25,7 @@ spec:
           release: {{ .Release.Name }}
     spec:
       imagePullSecrets:
-      - name: {{ .Values.inf.imagePullSecrets }}
+      - name: {{ .Values.imagePullSecrets }}
       containers:
         - name: {{ .Chart.Name }}
           {{ if .Values.probes -}}
