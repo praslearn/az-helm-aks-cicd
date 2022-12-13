@@ -20,12 +20,7 @@ steps:
     displayName: 'install helm'
     inputs:
       helmVersionToInstall: $(helmVersion)
-  - task: HelmDeploy@0
-    enabled: false
-    inputs:
-      command: 'package'
-      chartPath:  '$(Build.SourcesDirectory)/deploy/k8s/helm' 
-      destination: '$(Build.SourcesDirectory)' 
+
   - task: Bash@3
     inputs:
       targetType: 'inline'
