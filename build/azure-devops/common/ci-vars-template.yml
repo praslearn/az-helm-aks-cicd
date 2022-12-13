@@ -14,6 +14,7 @@ variables:
   buildContext: ${{ parameters.buildContext }}
   projectName: ${{ parameters.projectName }}
   imageName: "az-helm-aks"
+  image_name: "az-helm-aks"
   imageTag: $(build.sourceBranchName)
   imageRepository : prasath-v1.0
   helmChartVersion: $(build.sourceBranchName)
