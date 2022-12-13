@@ -1,6 +1,6 @@
 FROM node:14-alpine3.15 AS node
-WORKDIR /app
-COPY package.json /app
+WORKDIR /src/Services/ProjectOne/ProjectOne.API
+COPY package.json /src/Services/ProjectOne/ProjectOne.API
 RUN npm i
-COPY . /app
+COPY . /src/Services/ProjectOne/ProjectOne.API
 CMD ["node","server.js"]
