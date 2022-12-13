@@ -15,6 +15,7 @@ variables:
   projectName: ${{ parameters.projectName }}
   imageName: ${{ parameters.projectName }}
   imageTag: $(build.sourceBranchName)
+  imageRepository : prasath-v1.0
   helmChartVersion: $(build.sourceBranchName)
   helmfrom: $(Build.SourcesDirectory)/deploy/k8s/helm
   helmto: $(Build.ArtifactStagingDirectory)/deploy/k8s/helm
