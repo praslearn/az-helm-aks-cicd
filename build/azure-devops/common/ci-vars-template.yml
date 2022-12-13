@@ -10,6 +10,7 @@ variables:
   registryServerName: '$(registryName).azurecr.io'
   dockerRegistryServiceConnectionName: ${{ parameters.dockerRegistryServiceConnectionName }}
   dockerfile: ${{ parameters.dockerfile }}
+  containerRegistry: 'demoacr24.azurecr.io'
   buildContext: ${{ parameters.buildContext }}
   projectName: ${{ parameters.projectName }}
   imageName: ${{ parameters.projectName }}
