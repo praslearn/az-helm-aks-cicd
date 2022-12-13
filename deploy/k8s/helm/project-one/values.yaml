@@ -4,6 +4,10 @@
 
 replicaCount: 1
 
+inf:
+  appinsights:
+    key: "12345-abcd-1234-abcsd-abcddefgabcd8" # App insights to use
+
 image:
   # overrides in the CD pipeline
   repository: DemoACR24/project-one
