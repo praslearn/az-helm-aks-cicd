@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: { { .Values.application.name } }
+  name: {{ .Values.Application.Name }}
   labels:
-    app: {{ .Values.application.name }}
-    chart: { { template "project-one.chart" . } }
+    app: {{ .Values.Application.Name }}
+    chart: {{ .Values.Application.Name }}
     release: { { .Release.Name } }
     heritage: { { .Release.Service } }
 spec:
@@ -15,5 +15,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app: { { template "project-one.name" . } }
+    app: {{ .Values.Application.Name }}
     release: { { .Release.Name } }
