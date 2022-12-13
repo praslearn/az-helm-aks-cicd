@@ -16,5 +16,5 @@ variables:
   imageName: "az-helm-aks"
   imageTag: $(build.sourceBranchName)
   helmChartVersion: $(build.sourceBranchName)
-  helmfrom: $(Build.SourcesDirectory)/deploy/k8s/helm/project-one
+  helmfrom: $(Build.SourcesDirectory)/deploy/k8s/helm
   helmto: $(Build.ArtifactStagingDirectory)/deploy/k8s/helm
