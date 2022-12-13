@@ -71,7 +71,7 @@ resources:
     cpu: 150m
 
 autoscaling:
-  enabled: false
+  enabled: true
   minReplicas: 1
   maxReplicas: 10
   targetCPUUtilizationPercentage: 80
@@ -99,15 +99,15 @@ env:
     - name: IsClusterEnv
       value: "True"
 
-probes:
-  liveness:
-    path: /liveness
-    initialDelaySeconds: 10
-    periodSeconds: 15
-    port: 80
-  readiness:
-    path: /hc
-    timeoutSeconds: 5
-    initialDelaySeconds: 30
-    periodSeconds: 60
-    port: 80
+#probes:
+#  liveness:
+#    path: /liveness
+#    initialDelaySeconds: 10
+#    periodSeconds: 15
+#    port: 80
+#  readiness:
+#    path: /hc
+#    timeoutSeconds: 5
+#    initialDelaySeconds: 30
+#    periodSeconds: 60
+#    port: 80
