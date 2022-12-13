@@ -20,7 +20,7 @@ variables:
   - group: acr-variable-group
   - template: ../common/ci-vars-template.yml
     parameters:
-      projectName: "DevopsProject"
+      projectName: "az-helm-aks"
       dockerRegistryServiceConnectionName: "DemoACR24"
       dockerfile: "src/Services/ProjectOne/ProjectOne.API/Dockerfile"
       buildContext: "$(System.DefaultWorkingDirectory)"
