@@ -5,15 +5,15 @@ metadata:
   labels:
     app: {{ .Values.Application.Name }}
     chart: {{ .Values.Application.Name }}
-    release: { { .Release.Name } }
-    heritage: { { .Release.Service } }
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
 spec:
-  type: { { .Values.service.type } }
+  type: {{ .Values.service.type }}
   ports:
-    - port: { { .Values.service.port } }
-      targetPort: http
+    - port: {{ .Values.service.port }}
+      targetPort: 8080
       protocol: TCP
       name: http
   selector:
     app: {{ .Values.Application.Name }}
-    release: { { .Release.Name } }
+    release: {{ .Release.Name }}
