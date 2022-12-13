@@ -16,7 +16,7 @@ steps:
   - bash: |
       echo $(registryPassword) | helm registry login $(registryName).azurecr.io --username $(registryLogin) --password-stdin
       cd $(Build.SourcesDirectory)/deploy/k8s/helm
-      helm chart save '$(helm package "$(Build.SourcesDirectory)/deploy/k8s/helm/project-one/*" --app-version $(imageTag) --version $(helmChartVersion) | grep -o '/.*.tgz')' '$(registryName).azurecr.io/charts/$(projectName):$(imageTag)'
+      helm chart save '$(helm package "$(Build.SourcesDirectory)/deploy/k8s/helm/project-one/*" --app-version $(imageTag) --version $(imageTag) | grep -o '/.*.tgz')' '$(registryName).azurecr.io/charts/$(projectName):$(imageTag)'
       helm chart push '$(registryName).azurecr.io/charts/$(projectName):$(imageTag)'
       echo $(jq -n --arg version "$(helmChartVersion)" '{helmChartVersion: $version}') > $(build.artifactStagingDirectory)/variables.json
     failOnStderr: true
