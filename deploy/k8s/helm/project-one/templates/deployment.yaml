@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: {{ .Values.application.name }}
   labels:
-    ufo: {{ $cfgname}}
     app: {{ .Values.application.name }}
     chart: {{ template "project-one.chart" . }}
     release: {{ .Release.Name }}
@@ -61,7 +60,7 @@ spec:
             - name: {{ .name }}
               valueFrom:
                 configMapKeyRef:
-                  name: {{ $cfgname }}
+                  name: {{ .Values.application.name }}
                   key: {{ .key }}
           {{- end -}}
           {{- end }}
