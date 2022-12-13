@@ -6,9 +6,8 @@ steps:
       repository: az-helm-aks
       dockerfile: $(dockerfile)
       containerRegistry: $(dockerRegistryServiceConnectionName)
-      buildContext: $(buildContext)
-      tags: |
-        0.0.1-Prasath
+      buildContext: "xxx"
+      tags: "0.0.1-Prasath"
 
   - task: HelmInstaller@1
     displayName: 'install helm'
