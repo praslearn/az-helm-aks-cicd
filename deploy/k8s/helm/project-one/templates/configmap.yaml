@@ -1,12 +1,10 @@
-{{- $name := include "project-one.fullname" . -}}
-
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: "cfg-{{ $name }}"
+  name: {{ .Values.application.name }}
   labels:
-    app: {{ template "project-one.name" . }}
-    chart: {{ template "project-one.chart" .}}
+    app:{{ .Values.application.name }}
+    chart: {{ .Values.application.name }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 data:
