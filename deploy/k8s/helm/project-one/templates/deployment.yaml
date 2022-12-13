@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.Application.Name }}
+  name: {{ .Chart.Name }}
   labels:
-    app: {{ .Values.Application.Name }}
+    app: {{ .Chart.Name }}
     chart: {{ template "project-one.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
@@ -13,12 +13,12 @@ spec:
 {{- end }}
   selector:
     matchLabels:
-      app: {{ .Values.Application.Name }}
+      app: {{ .Chart.Name }}
       release: {{ .Release.Name }}
   template:
     metadata:
       labels:
-          app: {{ .Values.Application.Name }}
+          app: {{ .Chart.Name }}
           release: {{ .Release.Name }}
     spec:
       imagePullSecrets:
@@ -46,7 +46,7 @@ spec:
             timeoutSeconds: {{ .Values.probes.readiness.timeoutSeconds }}
           {{- end -}}
           {{- end }}           
-          image: "{{ .Values.image.repository }}/{{ .Values.Application.Name }}:{{.Values.image.tag |  default .Chart.AppVersion}}"
+          image: "{{ .Values.image.repository }}/{{ .Chart.Name }}:{{.Values.image.tag |  default .Chart.AppVersion}}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
           {{- if .Values.env.values -}}
@@ -60,7 +60,7 @@ spec:
             - name: {{ .name }}
               valueFrom:
                 configMapKeyRef:
-                  name: {{ .Values.Application.Name }}
+                  name: {{ .Chart.Name }}
                   key: {{ .key }}
           {{- end -}}
           {{- end }}
