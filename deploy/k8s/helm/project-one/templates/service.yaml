@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: { { .Values.application.name } }
   labels:
-    app: { { template "project-one.name" . } }
+    app: {{ .Values.application.name }}
     chart: { { template "project-one.chart" . } }
     release: { { .Release.Name } }
     heritage: { { .Release.Service } }
