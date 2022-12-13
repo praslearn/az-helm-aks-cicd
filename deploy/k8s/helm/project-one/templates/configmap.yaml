@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: {{ .Chart.Name }}
   labels:
-    app:{{ .Chart.Name }}
+    app: {{ .Chart.Name }}
     chart: {{ .Chart.Name }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
