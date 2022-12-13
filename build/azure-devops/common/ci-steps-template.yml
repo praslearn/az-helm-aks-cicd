@@ -5,7 +5,7 @@ steps:
       command: buildAndPush
       repository: az-helm-aks
       dockerfile: $(dockerfile)
-      containerRegistry: $(dockerRegistryServiceConnectionName)
+      containerRegistry: 'demoacr24.azurecr.io'
       buildContext: $(buildContext)
       tags: |
         0.0.1-Prasath
