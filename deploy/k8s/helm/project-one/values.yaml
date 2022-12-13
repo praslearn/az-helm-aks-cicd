@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   # overrides in the CD pipeline
-  repository: organization/project-one
+  repository: DemoACR24/project-one
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   # tag: latest
