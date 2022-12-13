@@ -7,7 +7,7 @@ parameters:
 variables:
   helmVersion: 3.2.3
   HELM_EXPERIMENTAL_OCI: 1
-  registryServerName: '$(registryName).azurecr.io'
+  registryServerName: 'demoacr24.azurecr.io'
   dockerRegistryServiceConnectionName: ${{ parameters.dockerRegistryServiceConnectionName }}
   dockerfile: ${{ parameters.dockerfile }}
   buildContext: ${{ parameters.buildContext }}
