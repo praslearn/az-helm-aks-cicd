@@ -3,12 +3,12 @@ steps:
     displayName: Build and push an image to container registry
     inputs:
       command: buildAndPush
-      repository: $(imageName)
+      repository: az-helm-aks
       dockerfile: $(dockerfile)
       containerRegistry: $(dockerRegistryServiceConnectionName)
       buildContext: $(buildContext)
       tags: |
-        $(imageTag)
+        0.0.1-Prasath
 
   - task: HelmInstaller@1
     displayName: 'install helm'
