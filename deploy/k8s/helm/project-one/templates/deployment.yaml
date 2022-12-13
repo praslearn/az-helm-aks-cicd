@@ -49,7 +49,7 @@ spec:
             timeoutSeconds: {{ .Values.probes.readiness.timeoutSeconds }}
           {{- end -}}
           {{- end }}           
-          image: "{{ template "fqdn-image" . }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          image: "{{ .Values.image.repository }}/{{ .Values.application.name }}:{{.Values.image.tag |  default .Chart.AppVersion}}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
           {{- if .Values.env.values -}}
