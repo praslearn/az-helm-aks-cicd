@@ -10,7 +10,7 @@ inf:
 
 image:
   # overrides in the CD pipeline
-  repository: DemoACR24/project-one
+  repository: demoacr24.azurecr.io
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   # tag: latest
@@ -81,6 +81,9 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+application:
+  name: az-helm-aks
 
 env:
   urls:
