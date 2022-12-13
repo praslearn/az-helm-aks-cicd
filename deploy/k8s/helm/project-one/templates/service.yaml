@@ -3,8 +3,8 @@ kind: Service
 metadata:
   name: az-helm-aks
   labels:
-    app: {{ .Values.Application.Name }}
-    chart: {{ .Values.Application.Name }}
+    app: az-helm-aks
+    chart: az-helm-aks
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
@@ -15,5 +15,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app: {{ .Values.Application.Name }}
+    app: az-helm-aks
     release: {{ .Release.Name }}
