@@ -3,13 +3,13 @@
 # Add steps that publish symbols, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
-trigger:
-  branches:
-    include:
-      - refs/tags/project-one/*
-  paths:
-    include:
-      - src/Services/ProjectOne/*
+trigger: none
+  # branches:
+  #   include:
+  #     - refs/tags/project-one/*
+  # paths:
+  #   include:
+  #     - src/Services/ProjectOne/*
 
 pr: none
 
@@ -20,7 +20,7 @@ variables:
   - group: acr-variable-group
   - template: ../common/ci-vars-template.yml
     parameters:
-      projectName: "project-one"
+      projectName: "protect-one"
       dockerRegistryServiceConnectionName: "DemoACR24"
       dockerfile: "src/Services/ProjectOne/ProjectOne.API/Dockerfile"
       buildContext: "$(System.DefaultWorkingDirectory)"
