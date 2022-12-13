@@ -60,7 +60,7 @@ spec:
             - name: {{ .name }}
               valueFrom:
                 configMapKeyRef:
-                  name: {{ .Chart.Name }}
+                  name: {{ $.Chart.Name }}
                   key: {{ .key }}
           {{- end -}}
           {{- end }}
