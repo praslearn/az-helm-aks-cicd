@@ -24,9 +24,8 @@ spec:
           app: {{ template "project-one.name" . }}
           release: {{ .Release.Name }}
     spec:
-      {{ if .Values.inf.registry -}}
       imagePullSecrets:
-      - name: {{ .Values.inf.registry.secretName }}
+      - name: {{ .Values.inf.imagePullSecrets }}
       {{- end }}
       containers:
         - name: {{ .Chart.Name }}
@@ -86,4 +85,3 @@ spec:
     {{- with .Values.tolerations }}
       tolerations:
 {{ toYaml . | indent 8 }}
-    {{- end }}
