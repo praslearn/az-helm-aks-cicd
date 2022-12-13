@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: { { .Values.app.svc.projectone } }
+  name: { { .Values.application.name } }
   labels:
     app: { { template "project-one.name" . } }
     chart: { { template "project-one.chart" . } }
