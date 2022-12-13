@@ -5,7 +5,7 @@ parameters:
   buildContext: ''
 
 variables:
-  helmVersion: 3.2.3
+  helmVersion: 1
   HELM_EXPERIMENTAL_OCI: 1
   registryServerName: '$(registryName).azurecr.io'
   dockerRegistryServiceConnectionName: ${{ parameters.dockerRegistryServiceConnectionName }}
@@ -14,9 +14,7 @@ variables:
   buildContext: ${{ parameters.buildContext }}
   projectName: ${{ parameters.projectName }}
   imageName: "az-helm-aks"
-  image_name: "az-helm-aks"
   imageTag: $(build.sourceBranchName)
-  imageRepository : prasath-v1.0
   helmChartVersion: $(build.sourceBranchName)
-  helmfrom: $(Build.SourcesDirectory)/deploy/k8s/helm
+  helmfrom: $(Build.SourcesDirectory)/deploy/k8s/helm/project-one
   helmto: $(Build.ArtifactStagingDirectory)/deploy/k8s/helm
