@@ -2,10 +2,10 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ .Values.Application.Name }}
+  name: {{ .Chart.Name }}
   labels:
-    app: {{ .Values.Application.Name }}
-    chart: {{ .Values.Application.Name }}
+    app: {{ .Chart.Name }}
+    chart: {{ .Chart.Name }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
