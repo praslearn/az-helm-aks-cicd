@@ -14,7 +14,7 @@ variables:
   buildContext: ${{ parameters.buildContext }}
   projectName: ${{ parameters.projectName }}
   imageName: "az-helm-aks"
-  imageTag: $(Build.BuildNumber)
+  imageTag: $(Build.BuildId)
   helmChartVersion: $(build.sourceBranchName)
   helmfrom: $(Build.SourcesDirectory)/deploy/k8s/helm
   helmto: $(Build.ArtifactStagingDirectory)/deploy/k8s/helm
