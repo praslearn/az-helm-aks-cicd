@@ -26,9 +26,3 @@ steps:
       script: |
         helm upgrade az-helm-aks $(Build.SourcesDirectory)/deploy/k8s/helm/project-one/ --kubeconfig $(Agent.TempDirectory)/config -n default --install
 
-  - task: CopyFiles@2
-    inputs:
-      sourceFolder: $(helmfrom)
-      targetFolder: $(helmto)
-  - publish: $(build.artifactStagingDirectory)
-    artifact: build-artifact
