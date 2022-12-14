@@ -11,7 +11,7 @@ steps:
       command: buildAndPush
       repository: az-helm-aks
       dockerfile: $(dockerfile)
-      containerRegistry: "5a7f37d8-a709-4159-b4ef-c231a2d88b34"
+      containerRegistry: 'demoacr24.azurecr.io'
       buildContext: $(buildContext)
       tags: $(imageTag)
 
