@@ -11,7 +11,7 @@ inf:
 image:
   # overrides in the CD pipeline
   repository: demoacr24.azurecr.io
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   # tag: latest
 
