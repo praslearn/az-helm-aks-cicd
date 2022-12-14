@@ -4,7 +4,7 @@
 
 application:
   name: az-helm-aks
-  
+
 replicaCount: 1
 
 inf:
@@ -87,18 +87,18 @@ affinity: {}
 
 
 
-# env:
-#   urls:
-#   configmap:
-#     - name: ApplicationInsights__InstrumentationKey
-#       key: all__InstrumentationKey
-#   values:
-#     - name: ASPNETCORE_ENVIRONMENT
-#       value: Test
-#     - name: OrchestratorType
-#       value: "K8S"
-#     - name: IsClusterEnv
-#       value: "True"
+env:
+  urls:
+  configmap:
+    - name: ApplicationInsights__InstrumentationKey
+      key: all__InstrumentationKey
+  values:
+    - name: ASPNETCORE_ENVIRONMENT
+      value: Test
+    - name: OrchestratorType
+      value: "K8S"
+    - name: IsClusterEnv
+      value: "True"
 
 #probes:
 #  liveness:
