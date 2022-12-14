@@ -13,7 +13,7 @@ steps:
       dockerfile: $(dockerfile)
       containerRegistry: "5a7f37d8-a709-4159-b4ef-c231a2d88b34"
       buildContext: $(buildContext)
-      tags: 'latest'
+      tags: $(Build.BuildId)
 
   - task: HelmInstaller@1
     displayName: 'install helm'
