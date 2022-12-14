@@ -13,6 +13,6 @@ variables:
   containerRegistry: 'demoacr24.azurecr.io'
   buildContext: ${{ parameters.buildContext }}
   projectName: ${{ parameters.projectName }}
-  imageName: "az-helm-aks"
+  imageName: "az-helm-aks/$(Build.BuildId)"
   imageTag: '$(Build.BuildId)'
   
