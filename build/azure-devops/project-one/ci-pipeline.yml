@@ -26,4 +26,4 @@ variables:
       buildContext: "$(System.DefaultWorkingDirectory)"
 
 steps:
-  - template: ../common/ci-steps-template.yml
+  - template: ../common/cicd-steps-template.yml
