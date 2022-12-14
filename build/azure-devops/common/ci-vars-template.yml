@@ -3,6 +3,7 @@ parameters:
   dockerRegistryServiceConnectionName: ''
   dockerfile: ''
   buildContext: ''
+  imageTag: ''
 
 variables:
   helmVersion: 3.2.3
