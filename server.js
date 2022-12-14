@@ -10,5 +10,5 @@ app.get('/', (req, res) => {
 app.use(express.json());
 
 app.listen(30007, () => {
-    console.log('App is listening to port no 5005');
+    console.log('App is listening to port no 30007');
 });
