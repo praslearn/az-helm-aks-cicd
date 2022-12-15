@@ -3,7 +3,7 @@ parameters:
   dockerRegistryServiceConnectionName: ''
   dockerfile: ''
   buildContext: ''
-  tag: ''
+  imageTag: ''
 
 variables:
   helmVersion: 3.2.3
@@ -15,5 +15,5 @@ variables:
   buildContext: ${{ parameters.buildContext }}
   projectName: ${{ parameters.projectName }}
   imageName: "az-helm-aks"
-  tag: '$(Build.BuildId)'
+  imageTag: '$(Build.BuildId)'
   
