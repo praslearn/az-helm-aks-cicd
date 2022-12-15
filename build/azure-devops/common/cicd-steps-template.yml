@@ -15,20 +15,12 @@ steps:
       buildContext: $(buildContext)
       tags: $(imageTag)
   
-  - task: Bash@3
-    inputs:
-     targetType: 'inline' 
-     script: |
-       echo '$(Build.BuildId)'
-
   - task: HelmInstaller@1
-    enabled : false
     displayName: 'install helm'
     inputs:
       helmVersionToInstall: $(helmVersion)
 
   - task: Bash@3
-    enabled: false
     inputs:
       targetType: 'inline'
       script: |
