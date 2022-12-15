@@ -16,7 +16,6 @@ steps:
       tags: $(imageTag)
   
   - task: Bash@3
-    enabled: false
     inputs:
      targetType: 'inline' 
      script: |
