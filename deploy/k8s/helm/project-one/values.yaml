@@ -16,7 +16,7 @@ image:
   repository: demoacr24.azurecr.io
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "$(Build.BuildId)"
 
 imagePullSecrets: []
 nameOverride: ""
